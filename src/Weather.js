@@ -14,5 +14,5 @@ export default function Weather(){
         axios.get(apiUrl).then(handleResponse);
     }, [city]);
 
-    return <h2>Hello from Weather!</h2>
+    return <h2>Hello from New York!</h2>
 }
