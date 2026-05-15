@@ -6,6 +6,7 @@ export default function Weather(){
     const [searchCity, setSearchCity] = useState("New York");
     const [weather, setWeather] = useState(null);
     const [forecast, setForecast] = useState([]);
+    const [unit, setUnit] = useState("fahrenheit");
     const [error, setError] = useState("");
     const [isLoading, setIsLoading] = useState(false);
 
@@ -78,6 +79,23 @@ export default function Weather(){
         return days[date.getDay()];
     }
 
+    function convertToCelsius(fahrenheit) {
+        return ((fahrenheit - 32) * 5) / 9;
+    }
+
+    function formatTemperature(fahrenheit) {
+        if (unit === "celsius") {
+            return Math.round(convertToCelsius(fahrenheit));
+        }
+
+        return Math.round(fahrenheit);
+    }
+
+    function toggleUnit(event) {
+        event.preventDefault();
+        setUnit(unit === "fahrenheit" ? "celsius" : "fahrenheit");
+    }
+
     return (
         <section className="weather-app">
             <header>
@@ -122,9 +140,13 @@ export default function Weather(){
                                 className="current-temperature-icon"
                             />
                             <span id="current-temperature" className="current-temperature-value">
-                                {Math.round(weather.temperature.current)}
+                                {formatTemperature(weather.temperature.current)}
                             </span>
-                            <span className="current-temperature-unit">°F</span>
+                            <span className="current-temperature-unit">
+                                <a href="/" onClick={toggleUnit}>
+                                    {unit === "fahrenheit" ? "°F" : "°C"}
+                                </a>
+                            </span>
                         </div>
                     </div>
 
@@ -139,10 +161,10 @@ export default function Weather(){
                                 />
                                 <div className="weather-forecast-temperatures">
                                     <div className="weather-forecast-temperature">
-                                        <strong>{Math.round(day.temperature.maximum)}°</strong>
+                                        <strong>{formatTemperature(day.temperature.maximum)}°</strong>
                                     </div>
                                     <div className="weather-forecast-temperature">
-                                        {Math.round(day.temperature.minimum)}°
+                                        {formatTemperature(day.temperature.minimum)}°
                                     </div>
                                 </div>
                             </div>
@@ -153,17 +175,10 @@ export default function Weather(){
 
             <footer>
                 <p>
-                    This project was coded by{" "}
-                    <a
-                        href="https://github.com/klanc0403"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        Kelly S. Lançon
-                    </a>{" "}
+                    This project was coded by Kelly S. Lançon 
                     and is{" "}
                     <a
-                        href="https://github.com/klanc0403/weather-app"
+                        href="https://github.com/kellyisasinger17/"
                         target="_blank"
                         rel="noreferrer"
                     >
@@ -171,7 +186,7 @@ export default function Weather(){
                     </a>{" "}
                     and{" "}
                     <a
-                        href="https://shecodes-weather-proj.netlify.app"
+                        href="https://interactiveweather.netlify.app"
                         target="_blank"
                         rel="noreferrer"
                     >

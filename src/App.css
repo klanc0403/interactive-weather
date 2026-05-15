@@ -115,6 +115,15 @@ main {
   top: -18px;
 }
 
+.current-temperature-unit a {
+  color: #65c6cf;
+  text-decoration: none;
+}
+
+.current-temperature-unit a:hover {
+  text-decoration: underline;
+}
+
 .weather-forecast {
   display: flex;
   justify-content: space-around;
