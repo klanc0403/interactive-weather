@@ -23,6 +23,15 @@ a {
   margin: 0 0 20px 0;
 }
 
+.weather-title {
+  color: rgba(39, 33, 66, 0.9);
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 32px;
+  padding: 16px 0;
+  text-align: center;
+}
+
 header {
   border-bottom: 1px solid #f9f7fe;
   padding-bottom: 30px;

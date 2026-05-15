@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 
 export default function Weather(){
     const apiKey = "0232oa2bd084ect6f17c5fee93b97744";
-    const logoUrl = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/178/769/original/ChatGPT_Image_Mar_2__2026__04_48_00_PM.png?1772488088";
     const [city, setCity] = useState("New York");
     const [searchCity, setSearchCity] = useState("New York");
     const [weather, setWeather] = useState(null);
@@ -82,12 +81,7 @@ export default function Weather(){
     return (
         <section className="weather-app">
             <header>
-                <img
-                    src={logoUrl}
-                    alt="KSL Intel Logo"
-                    className="weather-logo"
-                    width="60"
-                />
+                <h1 className="weather-title">Interactive Weather Forecast</h1>
 
                 <form id="search-form" className="search-form" onSubmit={search}>
                     <input
