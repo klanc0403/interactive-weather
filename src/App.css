@@ -1,38 +1,195 @@
-.App {
-  text-align: center;
+body {
+  background: rgb(98, 197, 206, 0.1);
+  font-family: "Roboto", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+  color: #65c6cf;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.weather-app {
+  background: white;
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 30px 50px rgb(98, 197, 206, 0.4);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.weather-logo {
+  max-height: 70px;
+  width: auto;
+  display: block;
+  margin: 0 0 20px 0;
+}
+
+header {
+  border-bottom: 1px solid #f9f7fe;
+  padding-bottom: 30px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.search-input {
+  background-color: rgb(73, 163, 136, 0.1);
+  border: none;
+  color: rgba(39, 33, 66, 0.9);
+  font-size: 16px;
+  padding: 20px;
+  width: 75%;
+  border-radius: 6px;
+}
+
+.search-button {
+  margin-left: 5px;
+  font-size: 16px;
+  background-color: #65c6cf;
   color: white;
+  cursor: pointer;
+  border: none;
+  padding: 20px;
+  line-height: 1;
+  border-radius: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+main {
+  padding: 30px 0;
+  font-family: "Montserrat", sans-serif;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.current-temperature {
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+}
+
+.current-weather {
+  display: flex;
+  justify-content: space-between;
+}
+
+.current-city {
+  font-size: 38px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.current-details {
+  color: rgba(39, 33, 66, 0.4);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-transform: capitalize;
+}
+
+.current-details strong {
+  color: rgb(73, 163, 136);
+}
+
+.current-temperature-icon {
+  position: relative;
+  font-size: 40px;
+  margin-right: 20px;
+  width: 70px;
+  height: 70px;
+}
+
+.current-temperature-value {
+  font-size: 80px;
+  font-weight: 600;
+  line-height: 70px;
+}
+
+.current-temperature-unit {
+  font-size: 28px;
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+  top: -18px;
+}
+
+.weather-forecast {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.weather-forecast-date {
+  text-align: center;
+  color: rgba(39, 33, 66, 0.4);
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+
+.weather-forecast-icon {
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+}
+
+.weather-forecast-temperatures {
+  text-align: center;
+  color: rgb(73, 163, 136);
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.weather-forecast-temperature {
+  padding: 0 10px;
+}
+
+footer {
+  border-top: 1px solid #f9f7fe;
+  text-align: center;
+  padding-top: 15px;
+  font-size: smaller;
+  color: rgba(39, 33, 66, 0.4);
+}
+
+footer p {
+  margin: 0;
+}
+
+.weather-error,
+.weather-status {
+  margin: 20px 0 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.weather-error {
+  color: #b42318;
+}
+
+@media (max-width: 640px) {
+  .weather-app {
+    margin: 20px;
+    padding: 20px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .search-input {
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .search-button {
+    margin: 10px 0 0;
+    width: 100%;
+  }
+
+  .current-weather {
+    display: block;
+  }
+
+  .current-temperature {
+    margin-top: 24px;
+  }
+
+  .weather-forecast {
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+  .weather-forecast-day {
+    width: 28%;
   }
 }
